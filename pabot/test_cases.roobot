@@ -1,0 +1,42 @@
+*** Settings ***
+Documentation     Simple Login Test Suite with Logging
+Suite Setup       Log    Starting Login Test Suite
+Suite Teardown    Log    Completing Login Test Suite
+
+*** Variables ***
+${MESSAGE}    Hello, this is a test message
+
+*** Test Cases ***
+Log Simple Message
+    [Documentation]    Test case to log a simple message
+    [Tags]    logging
+    Log    ${MESSAGE}
+    Log    Test completed successfully
+
+Log With Different Levels
+    [Documentation]    Test logging with different levels
+    Log    This is an INFO message    level=INFO
+    Log    This is a DEBUG message    level=DEBUG
+
+Log Multiple Lines
+    [Documentation]    Test logging multiple lines
+    Log    First line of the message
+    Log    Second line of the message
+    Log    Third line of the message
+
+Log With Timestamp
+    [Documentation]    Test logging with timestamp
+    ${current_time}=    Get Time
+    Log    Current time is: ${current_time}
+    Log    Logging test completed
+
+Log With Status
+    [Documentation]    Test logging with status
+    Log    Starting the test
+    Log    Test executed successfully
+    [Teardown]    Log    Test cleanup completed
+
+*** Keywords ***
+Get Time
+    ${time}=    Evaluate    datetime.datetime.now()    modules=datetime
+    [Return]    ${time}

@@ -1,0 +1,21 @@
+Parallel Execution
+   Suit level - 
+
+pabot --processes 8 .\filePath
+
+   Test Case level  - 
+ 	
+Pabot --testlevelsplit --processes 8 .\filePath
+
+   Retry Failed tests
+
+	pabot --testlevelsplit --processes 8 --listener RetryFailed:2 .\filePath
+
+    Via Tags - 
+
+	pabot --testlevelsplit --processes 8 –include TagName .\filePath
+	or 
+	pabot --testlevelsplit --processes 3 --include TagName .
+
+
+

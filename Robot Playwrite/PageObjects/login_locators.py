@@ -1,0 +1,7 @@
+serial_key = '//input[@id="license-input"]'
+register_button = '//button[@id="register-key"]'
+pos_username = '//input[@id="login-user"]'
+pos_continue_button = '//button[@id="login-button"]'
+pos_password = '//input[@id="login-password"]'
+catalog_update = '//h5[text()="Catalog Updated"]'
+pos_dashboard = '//li[@class="dashboard-icon" and @title="Promotions"]'
